@@ -122,14 +122,14 @@ public class MoleculeSignature extends AbstractGraphSignature {
         this.molecule = molecule;
     }
 
-    @Override /** {@inheritDoc} */
-    @TestMethod("getVertexCountTest")
+    @Override
+	@TestMethod("getVertexCountTest")
     protected int getVertexCount() {
         return this.molecule.getAtomCount();
     }
 
-    @Override /** {@inheritDoc} */
-    @TestMethod("getSignatureStringForVertexTest")
+    @Override
+	@TestMethod("getSignatureStringForVertexTest")
     public String signatureStringForVertex(int vertexIndex) {
         AtomSignature atomSignature;
         int height = super.getHeight();
@@ -142,16 +142,16 @@ public class MoleculeSignature extends AbstractGraphSignature {
         return atomSignature.toCanonicalString();
     }
 
-    @Override /** {@inheritDoc} */
-    @TestMethod("getSignatureStringForVertexTest_height")
+    @Override
+	@TestMethod("getSignatureStringForVertexTest_height")
     public String signatureStringForVertex(int vertexIndex, int height) {
         AtomSignature atomSignature = 
             new AtomSignature(vertexIndex, height, this.molecule);
         return atomSignature.toCanonicalString();
     }
 
-    @Override /** {@inheritDoc} */
-    @TestMethod("getSignatureForVertexTest")
+    @Override
+	@TestMethod("getSignatureForVertexTest")
     public AbstractVertexSignature signatureForVertex(int vertexIndex) {
         return new AtomSignature(vertexIndex, this.molecule);
     }

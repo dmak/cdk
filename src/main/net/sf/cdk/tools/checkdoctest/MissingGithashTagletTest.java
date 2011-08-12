@@ -20,13 +20,13 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 
-import net.sf.cdk.tools.doclets.CDKGitTaglet;
-
 import com.github.ojdcheck.test.IClassDocTester;
 import com.github.ojdcheck.test.ITestReport;
 import com.github.ojdcheck.test.TestReport;
 import com.sun.javadoc.ClassDoc;
 import com.sun.javadoc.Tag;
+
+import net.sf.cdk.tools.doclets.CDKGitTaglet;
 
 /**
  * OpenJavaDocCheck test that warns about missing cdk.githash tags.
@@ -78,10 +78,11 @@ public class MissingGithashTagletTest implements IClassDocTester {
         return Priority.MINOR_ERROR;
     }
 
-	@Override
+    /**
+     * {@inheritDoc}
+     */
 	public String getURL() {
 		// There is not web page yet
 		return null;
 	}
-
 }
